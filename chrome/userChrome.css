@@ -22,7 +22,6 @@
 .tabbrowser-tab:not(:hover) .tab-close-button{ display:none; }
 .tabbrowser-tab:not([pinned]):hover .tab-close-button{ display:block !important; }
 
-
 .tabbrowser-tab:not([pinned]):hover  .tab-icon-image {
   display: none !important;
 }
@@ -38,5 +37,5 @@
 
 .tabbrowser-tab .tab-close-button {
   margin-left: -2px !important;
-  margin-right: 4px !important;
+  margin-right: 2px !important;
 }
