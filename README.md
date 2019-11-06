@@ -2,7 +2,7 @@
 Optimizations Include:
 1. Close tab button replaces favicon on hover (saving tab space and allowing for longer tab titles)
 2. Fullscreen content is limited to the browser container (Allowing for a video to play alongside an application in the same workspace) (**WIP)
-3. Buttons only appear on hover (giving a minimal aesthetic) (**WIP)
+3. Buttons only appear on hover (giving a minimal aesthetic)
 4. Transparent titlebar / tab bar, because sexy (**WIP)
 
 # MaterialFox: Original Readme

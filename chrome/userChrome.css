@@ -17,8 +17,7 @@
     Personal Changes 
 ********************************/
 
-/*Replace favicon on tabs with close button on hover */
-
+/* Replace favicon on tabs with close button on hover */
 .tabbrowser-tab:not(:hover) .tab-close-button{ display:none; }
 .tabbrowser-tab:not([pinned]):hover .tab-close-button{ display:block !important; }
 
@@ -33,4 +32,23 @@
 .tabbrowser-tab:hover  .tab-label-container,
 .tabbrowser-tab:hover  .tab-icon-sound {
   -moz-box-ordinal-group: 2 !important;
+}
+
+
+/* Reveal toolbar buttons when user hovers */
+:root:not([customizing]) #nav-bar toolbarbutton {
+  margin-left: -28px !important;
+  opacity: 0 !important;
+  transform: scale(.85, .85) !important;
+  pointer-events: none !important;
+  transition: all 100ms var(--animation-easing-function) !important;
+}
+
+:root:not([customizing]) :hover > #nav-bar toolbarbutton,
+:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar toolbarbutton,
+:root:not([customizing]) :hover > #titlebar toolbarbutton {
+  transform: scale(1, 1) !important;
+  opacity:1 !important;
+  margin-left:0 !important;
+  pointer-events: auto !important;
 }
