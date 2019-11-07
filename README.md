@@ -1,4 +1,8 @@
 # WillPower3309 Fork Readme
+Optimizations Include (ALL ARE WORK IN PROGRESS, NOT YET LIVE):
+1. Close tab button replaces favicon on hover (saving tab space and allowing for longer tab titles)
+2. Fullscreen content is limited to the browser container (Allowing for a video to play alongside an application in the same window)
+3. Buttons only appear on hover (giving a minimal aesthetic)
 
 # MaterialFox: Original Readme
 *A Material Design-inspired userChrome.css theme for Firefox*
