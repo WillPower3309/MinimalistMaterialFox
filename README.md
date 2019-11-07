@@ -1,4 +1,6 @@
-# MaterialFox
+# WillPower3309 Fork Readme
+
+# MaterialFox: Original Readme
 *A Material Design-inspired userChrome.css theme for Firefox*
 
 ![Preview](https://user-images.githubusercontent.com/5405629/45172944-21d91900-b24a-11e8-8bc5-03814121b0de.png)
