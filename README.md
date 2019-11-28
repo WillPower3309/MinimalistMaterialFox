@@ -1,4 +1,7 @@
 # WillPower3309 Fork Readme
+
+![](minimalMaterialFoxDemo.gif)
+
 Optimizations Include:
 1. Close tab button replaces favicon on hover (saving tab space and allowing for longer tab titles)
 2. Fullscreen content is limited to the browser container (allowing for a video to play alongside an application in the same workspace)
