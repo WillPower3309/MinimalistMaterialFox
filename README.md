@@ -10,6 +10,8 @@ Optimizations Include:
 ## Installation
 Follow the steps below.
 
+In [about:config], set `browser.urlbar.update1` to `false` to remove the ugly search bar zoom
+
 If desired, you may have fullscreen content limited to the browser container (allowing for a video to play alongside an application in the same workspace, recommended for tiling window manager users) by changing the following in [about:config]:
 Set ```full-screen-api.ignore-widgets``` to ```true```
 
