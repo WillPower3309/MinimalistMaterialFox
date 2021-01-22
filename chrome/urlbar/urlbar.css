@@ -1,97 +1,73 @@
-.ac-type-icon
+.urlbarView-body-inner
 {
-	order: 9 !important;
-	margin-inline-start: 16px !important;
-	margin-inline-end: 0 !important;
-}
-
-.ac-site-icon
-{
-	margin-inline-end: 16px !important;
-}
-
-.ac-separator
-{
-	display: none !important;
-}
-
-.ac-title,
-.ac-url
-{
-	flex: 1 !important;
-}
-
-.search-panel-one-offs
-{
-	border-radius: 0 0 8px 8px !important;
-	margin-bottom: 18px !important;
-}
-
-.search-one-offs
-{
-	display: block !important;
-}
-
-#urlbarView-results
-{
-	padding: 0 !important;
+	border: 0 !important;
 }
 
 .urlbarView-row
 {
-	padding: 0 16px !important;
-	height: 48px !important;
+	padding: 0 !important;
 	border-radius: 0 !important;
-	display: flex !important;
-	align-items: center !important;
 }
 
 .urlbarView-row-inner
 {
-	height: 100% !important;
-	width: 100% !important;
-	grid-template-columns: 32px 1fr 0 0 !important;
-	grid-template-rows: 16px 16px !important;
-	grid-template-areas:
-		"icon title . secondary-icon"
-		"icon secondary . secondary-icon" !important;
-	display: grid !important;
 	align-items: center !important;
-	align-content: center !important;
+	position: relative !important;
+	padding: 12px 0 !important;
+	padding-inline: 48px 16px !important;
+	max-width: 100% !important;
+	width: auto !important;
 }
 
-.urlbarView-row[type]
+.urlbarView-no-wrap
 {
-	height: 32px !important;
+	height: 100% !important;
+	align-items: center !important;
+	margin-inline-start: 0 !important;
+	max-width: 100% !important;
 }
 
-.urlbarView-row[type] .urlbarView-row-inner
+.urlbarView-row[has-url][type]:not([type=bookmark]) .urlbarView-row-inner
 {
-	grid-template-columns: 32px 1fr auto 0 !important;
-	grid-template-rows: auto !important;
-	grid-template-areas:
-		"icon title secondary secondary-icon" !important;
+	flex-direction: column !important;
+	align-items: flex-start !important;
 }
 
-.urlbarView-row[type=switchtab] .urlbarView-row-inner
+.urlbarView-row[has-url][type]:not([type=bookmark]) .urlbarView-no-wrap
 {
-	grid-template-columns: 32px 1fr auto 32px !important;
+	height: auto !important;
+	align-self: flex-start !important;
+	width: 100% !important;
 }
 
-.urlbarView-row[type] .urlbarView-url
+.urlbarView-title-separator
 {
-	display: none !important;
+	visibility: visible !important;
+}
+
+.urlbarView-title-separator::before
+{
+	content: "-" !important;
+	color: inherit !important;
+}
+
+.urlbarView-title-separator,
+.urlbarView-action
+{
+	opacity: .6 !important;
+	color: inherit !important;
+	font-size: revert !important;
 }
 
 .urlbarView-favicon
 {
-	grid-area: icon !important;
-}
-
-.urlbarView-title
-{
-	padding-inline-end: 8px !important;
-	grid-area: title !important;
+	position: absolute !important;
+	left: 16px !important;
+	top: 50% !important;
+	transform: translateY(-50%) !important;
+	fill-opacity: .6 !important;
+	flex: unset !important;
+	margin: unset !important;
 }
 
 .urlbarView-title,
@@ -101,48 +77,72 @@
 	mask-image: none !important;
 }
 
-.urlbarView-secondary
+.urlbarView-title
 {
-	grid-area: secondary !important;
+	flex: 1 !important;
+	flex-basis: unset !important;
 }
 
-.urlbarView-title-separator,
-.urlbarView-title-separator::before
+.urlbarView-url
+{
+	max-width: 100% !important;
+	font-size: revert !important;
+	color: var(--urlbar-popup-url-color) !important;
+	padding: 0 !important;
+}
+
+.urlbarView-url:not(:empty)
+{
+	visibility: visible !important;
+}
+
+.urlbarView-action:not(:empty)
+{
+    display: flex !important;
+}
+
+.urlbarView-row[type=search] ~ .urlbarView-row[type=search] .urlbarView-title-separator,
+.urlbarView-row[type=search] ~ .urlbarView-row[type=search] .urlbarView-action,
+.urlbarView-row[has-url][type]:not([type=bookmark]) .urlbarView-title-separator,
+.urlbarView-type-icon
 {
 	display: none !important;
 }
 
-.urlbarView-type-icon
+.urlbarView-row[type=tip] > .urlbarView-row-inner > .urlbarView-favicon,
+.urlbarView-row[type=tip] > .urlbarView-row-inner > .urlbarView-title,
+.urlbarView-tip-button,
+.urlbarView-tip-help
 {
-	justify-self: flex-end !important;
-	margin: 0 !important;
-	grid-area: secondary-icon !important;
+	margin-block-end: 0 !important;
 }
 
-.search-one-offs
+.urlbarView .search-one-offs
 {
 	padding: 4px !important;
 	display: flex !important;
-	flex-direction: row !important;
 }
 
-.search-panel-one-offs-header
+.urlbarView .search-panel-one-offs-header
 {
 	margin-inline-start: 12px !important;
 	line-height: 40px !important;
 	transform: translateY(-1px) !important;
 }
 
-.search-panel-one-offs
+.urlbarView .search-panel-one-offs
 {
+	border-radius: 0 0 8px 8px !important;
 	display: inline-flex !important;
 	flex-direction: row !important;
 	padding: 0 !important;
 	margin: 0 !important;
 	float: left !important;
+	max-width: none !important;
+	height: auto !important;
 }
 
-.searchbar-engine-one-off-item
+.urlbarView .searchbar-engine-one-off-item
 {
 	height: 32px !important;
 	border-radius: 16px !important;
@@ -168,12 +168,16 @@
 	box-shadow: none !important;
 	padding: 2px !important;
 	background-clip: padding-box !important;
-	min-height: 28px !important;
 	transition: background-color .1s var(--ease-basic) !important;
 	-moz-box-align: center !important;
-	
 	display: block !important;
 	margin: 0 !important;
+	top: 0 !important;
+	color: inherit !important;
+	
+	--urlbar-height: 28px !important;
+	
+	min-height: var(--urlbar-height) !important;
 }
 
 #urlbar:not(:-moz-lwtheme),
@@ -204,6 +208,14 @@
 	margin: 0 !important;
 }
 
+/* if only focused, don't break out the urlbar */
+#urlbar[focused]:not([open])
+{
+	width: 100% !important;
+	left: 0 !important;
+	right: 0 !important;
+}
+
 #urlbar[open],
 #searchbar[open]
 {
@@ -211,12 +223,11 @@
 	padding: 0 !important;
 	border-radius: 8px !important;
 	min-height: 37px !important;
-	margin: 0 -5px -1px !important;
+	margin: -4px 0 -1px !important;
 	box-shadow:
 		0 5px 5px -3px rgba(0,0,0,.2),
 		0 8px 10px 1px rgba(0,0,0,.14),
 		0 3px 14px 2px rgba(0,0,0,.12) !important;
-	position: relative !important;
 	z-index: 99999 !important;
 }
 
@@ -233,6 +244,13 @@
 	align-items: center !important;
 }
 
+#urlbar-input-container
+{
+	height: auto !important;
+	padding: 0 !important;
+	border: 0 !important;
+}
+
 .urlbar-input-box,
 .searchbar-textbox
 {
@@ -242,6 +260,18 @@
 #urlbar-input
 {
 	width: 100% !important;
+}
+
+#urlbar-input,
+.searchbar-textbox
+{
+	color: var(--lwt-toolbar-field-color) !important;
+}
+
+#urlbar-input::placeholder,
+.searchbar-textbox::placeholder
+{
+	opacity: .66 !important;
 }
 
 #urlbar[open] #urlbar-input-container
@@ -264,6 +294,7 @@
 	box-shadow: none !important;
 	border: 0 !important;
 	background: 0 !important;
+	margin: 0 !important;
 }
 
 #urlbar[open] .urlbarView
@@ -283,13 +314,6 @@
 	overflow: visible !important;
 	padding: 0 !important;
 	margin-inline: 6px !important;
-}
-
-.searchbar-textbox
-{
-	color: inherit !important;
-	font-size: inherit !important;
-	min-height: auto !important;
 }
 
 #identity-icon
@@ -350,7 +374,7 @@
 	opacity: 0 !important;
 }
 
-#identity-box.extensionPage > #identity-icon
+#urlbar[pageproxystate=valid] #identity-box.extensionPage > #identity-icon
 {
 	list-style-image: none !important;
 	margin-inline-end: -16px !important;
@@ -503,7 +527,8 @@
 	order: 99 !important;
 }
 
-#urlbar[open] #page-action-buttons
+#urlbar[open] #page-action-buttons,
+#urlbar[open] #tracking-protection-icon-container
 {
 	display: none !important;
 }
@@ -550,7 +575,7 @@
 		background-color .2s var(--ease-basic),
 		margin .15s var(--ease-in),
 		opacity .15s var(--ease-basic),
-		visibility 0s .2s !important;
+		visibility 0s 4s !important;
 	opacity: 0 !important;
 	visibility: hidden !important;
 	margin-inline-start: -32px !important;
@@ -736,6 +761,7 @@
 .searchbar-textbox /* < 71 */
 {
 	transform: translateY(var(--input-offset)) !important;
+	line-height: 1.745em !important;
 }
 
 /* 1x */

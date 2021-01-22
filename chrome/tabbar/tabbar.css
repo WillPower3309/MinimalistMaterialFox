@@ -82,8 +82,8 @@
 #TabsToolbar .tabbrowser-arrowscrollbox::part(scrollbutton-up),
 #TabsToolbar .tabbrowser-arrowscrollbox::part(scrollbutton-down),
 /* no ::part workaround - may have side effects */
-.scrollbutton-up[part="scrollbutton-up"],
-.scrollbutton-down[part="scrollbutton-down"]
+#scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton),
+#scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton)
 {
 	margin-top: calc((var(--tab-min-height) - var(--button-size)) / 2) !important;
 	margin-bottom: calc((var(--tab-min-height) - var(--button-size)) / 2) !important;
@@ -431,7 +431,8 @@
 } 
 
 /* close button / favicon is centered within 36px tab */
-@supports -moz-bool-pref("materialFox.reduceTabOverflow")
+/* disabled for now because it's broken in recent version of Firefox */
+@supports -moz-bool-pref("materialFox.reduceTabOverflow disabled")
 {
 	#main-window
 	{
@@ -477,6 +478,11 @@
 	padding-inline-start: 0 !important;
 }
 
+#tabbrowser-tabs[overflow]
+{
+	margin-inline-start: 8px !important;
+}
+
 #tabbrowser-tabs[overflow] .tabbrowser-tab[first-visible-tab]:not([pinned]),
 #tabbrowser-tabs[overflow] .tabbrowser-tab[pinned] + .tabbrowser-tab:not([pinned]),
 #tabbrowser-tabs:not([overflow]) .tabbrowser-tab[first-visible-tab]
@@ -486,7 +492,39 @@
 
 #tabbrowser-tabs[overflow] .tabbrowser-tab[last-visible-tab]:not([pinned])
 {
-	margin-inline-end: 8px !important;
+	margin-inline-end: 7px !important;
+}
+
+.tabbrowser-tab[usercontextid] > .tab-stack::after
+{
+	content: "" !important;
+	position: absolute !important;
+	display: flex !important;
+	bottom: 0 !important;
+	left: 8px !important;
+	width: calc(100% - 16px) !important;
+	height: 2px !important;
+	box-sizing: border-box !important;
+	border-radius: 99px 99px 0 0 !important;
+	transform: none !important;
+	background: var(--identity-tab-color) !important;
+	transition-property: top, bottom, left, right, width, height, border-radius;
+	transition-duration: .225s !important;
+	transition-timing-function: var(--ease-out) !important;
+}
+
+.tab-bottom-line
+{
+	display: none !important;
+}
+
+.tabbrowser-tab[usercontextid][selected] > .tab-stack::after
+{
+	bottom: calc(100% - 9px) !important;
+	left: calc(100% - 9px) !important;
+	width: 6px !important;
+	height: 6px !important;
+	border-radius: 99px !important;
 }
 
 /* < 72 */
@@ -496,8 +534,8 @@
 #tabbrowser-tabs::part(arrowscrollbox-overflow-start-indicator),
 #tabbrowser-tabs::part(arrowscrollbox-overflow-end-indicator),
 /* no ::part workaround - may have side effects */
-spacer[part="arrowscrollbox-overflow-start-indicator"],
-spacer[part="arrowscrollbox-overflow-end-indicator"]
+spacer[part="overflow-start-indicator"],
+spacer[part="overflow-end-indicator"]
 {
 	display: none !important;
 }
