@@ -19,7 +19,7 @@ If desired, in [about:config], set `browser.urlbar.update1` to `false` to remove
 If desired, you may have fullscreen content limited to the browser container (allowing for a video to play alongside an application in the same workspace, recommended for tiling window manager users) by changing the following in [about:config]:
 Set ```full-screen-api.ignore-widgets``` to ```true```
 
-** The startpage is available [here](https://github.com/Jaredk3nt/homepage)**
+**The startpage is available [here](https://github.com/Jaredk3nt/homepage)**
 
 # MaterialFox: Original Readme
 *A Material Design-inspired userChrome.css theme for Firefox*
